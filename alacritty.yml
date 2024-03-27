@@ -1,0 +1,158 @@
+env:
+    TERM: alacritty
+
+#shell: C:\cygwin64\bin\mintty.exe
+  # program: "C:\\Windows\\system32\\cmd.exe"
+  #program: "powershell"
+  #program: wsl.exe
+shell:
+  program: "C:\\cygwin64\\bin\\bash.exe"
+  args:
+    - --login
+# Startup directory
+ #
+ # Directory the shell is started in. If this is unset, or `None`, the working
+ # directory of the parent process will be used.
+working_directory: C:\\
+
+window.opacity: 0.95
+
+
+font:
+  normal:
+    family: "MesloLGS NF"
+    style: Regular
+  bold:
+    family: "MesloLGS NF"
+    style: Bold
+  italic:
+    family: "MesloLGS NF"
+    style: Italic
+  bold_italic:
+    family: "MesloLGS NF"
+    style: Bold Italic
+  size: 16.0
+
+window:
+  position:
+    x: 100
+    y: 100
+
+  dimensions:
+    columns: 133
+    lines: 40
+
+  padding:
+    x: 10
+    y: 10
+
+  # Startup Mode (changes require restart)
+  startup_mode: Fullscreen
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+
+  # Window decorations
+  #
+  # Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+  decorations: full
+
+# Use custom cursor colors. If true, display the cursor in the cursor.foreground
+# and cursor.background colors, otherwise invert the colors of the cursor.
+custom_cursor_colors: true
+
+# colors:
+#  primary:
+#    background: "#1e2127"
+#    foreground: "#D8DEE9"
+
+
+colors:
+  primary:
+    background: '0x1f1f28'
+    foreground: '0xdcd7ba'
+
+  normal:
+    black:   '0x090618'
+    red:     '0xc34043'
+    green:   '0x76946a'
+    yellow:  '0xc0a36e'
+    blue:    '0x7e9cd8'
+    magenta: '0x957fb8'
+    cyan:    '0x6a9589'
+    white:   '0xc8c093'
+
+  bright:
+    black:   '0x727169'
+    red:     '0xe82424'
+    green:   '0x98bb6c'
+    yellow:  '0xe6c384'
+    blue:    '0x7fb4ca'
+    magenta: '0x938aa9'
+    cyan:    '0x7aa89f'
+    white:   '0xdcd7ba'
+
+  selection:
+    background: '0x2d4f67'
+    foreground: '0xc8c093'
+
+  indexed_colors:
+    - { index: 16, color: '0xffa066' }
+    - { index: 17, color: '0xff5d62' }
+    
+draw_bold_text_with_bright_colors: true
+
+live_config_reload: true
+
+scrolling:
+  history: 10000
+  multiplier: 10
+
+cursor:
+  # Cursor style
+  #
+  # Values for 'style':
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style:
+    shape: Underline
+    blinking: on
+  # If this is `true`, the cursor will be rendered as a hollow box when the
+  # window is not focused.
+  unfocused_hollow: true
+
+key_bindings:
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: V,        mods: Control,       action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: C,        mods: Control,       action: Copy             }
+  - { key: N,        mods: Command,       action: SpawnNewInstance }
+  - { key: Q,        mods: Alt,           action: Quit             }
+  - { key: Return,   mods: Alt,           action: ToggleFullscreen }
+  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: true
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
