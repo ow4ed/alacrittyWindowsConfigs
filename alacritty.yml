@@ -15,8 +15,6 @@ shell:
  # directory of the parent process will be used.
 working_directory: C:\\
 
-window.opacity: 0.95
-
 
 font:
   normal:
@@ -31,23 +29,23 @@ font:
   bold_italic:
     family: "MesloLGS NF"
     style: Bold Italic
-  size: 16.0
+  size: 14.0
 
 window:
-  position:
-    x: 100
-    y: 100
+#  position:
+#    x: 100
+#    y: 100
 
-  dimensions:
-    columns: 133
-    lines: 40
+#  dimensions:
+#    columns: 133
+#    lines: 40
 
-  padding:
-    x: 10
-    y: 10
+#  padding:
+#    x: 10
+#    y: 10
 
   # Startup Mode (changes require restart)
-  startup_mode: Fullscreen
+  startup_mode: Maximized
   # Values for `startup_mode`:
   #   - Windowed
   #   - Maximized
@@ -61,6 +59,10 @@ window:
   # - transparent: title bar, transparent background and title bar buttons
   # - buttonless: title bar, transparent background, but no title bar buttons
   decorations: full
+
+  dynamic_title: true  
+
+  opacity: 0.9
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
@@ -132,13 +134,24 @@ key_bindings:
   - { key: V,        mods: Control,       action: Paste            }
   - { key: C,        mods: Control|Shift, action: Copy             }
   - { key: C,        mods: Control,       action: Copy             }
+ 
+  - { key: Q,                   chars: "\x03"            }
+  - { key: Q,        mods: Control,           action: Quit             }
+  
+ 
+  - { key: Up,   action: ScrollPageUp}
+  - { key: Down, action: ScrollPageDown}
+  - { key: PageUp,     action: ScrollToTop}
+  - { key: PageDown,      action: ScrollToBottom}
+
+ 
   - { key: N,        mods: Command,       action: SpawnNewInstance }
-  - { key: Q,        mods: Alt,           action: Quit             }
+ 
   - { key: Return,   mods: Alt,           action: ToggleFullscreen }
   - { key: Plus,     mods: Control,       action: IncreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   - { key: Key0,     mods: Control,       action: ResetFontSize    }
-
+ 
 mouse:
   # Click settings
   #
