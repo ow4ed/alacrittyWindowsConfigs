@@ -136,8 +136,11 @@ key_bindings:
   - { key: C,        mods: Control,       action: Copy             }
  
   
-  - { key: Q,        mods: Control,           action: Quit             }
+  #- { key: Q,        mods: Control,           action: Quit             }
+  - { key: W,        action: Quit, mods: Control             }
+  - { key: T,        action: SpawnNewInstance, mods: Control }
   - { key: Q,                   chars: "\x03"            }
+  
  
   - { key: Up,   action: ScrollPageUp,   mods: Shift}
   - { key: Down, action: ScrollPageDown,   mods: Shift}
@@ -145,7 +148,6 @@ key_bindings:
   - { key: PageDown,      action: ScrollToBottom}
 
  
-  - { key: N,        mods: Command,       action: SpawnNewInstance }
  
   - { key: Return,   mods: Alt,           action: ToggleFullscreen }
   - { key: Plus,     mods: Control,       action: IncreaseFontSize }
